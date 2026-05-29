@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 // know that eloquent handles table automatically
@@ -10,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 // #[Table('companies')]
 class Company extends Model
 {
+    use HasFactory;
     protected $fillable=['name'];
     public function users(){
         // this tells laravel that one company owns multiple

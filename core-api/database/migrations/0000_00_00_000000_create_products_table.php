@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id()->primary();
+            $table->id();
             $table->timestamps();
             $table->foreignId('company_id')->constrained()->cascadeOnDelete();
             // sku as stock keeping unit, which is the barcode

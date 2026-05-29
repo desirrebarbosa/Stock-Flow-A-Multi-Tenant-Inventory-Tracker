@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             // primary key for building relationship with other tables.
-            $table->id()->primary(); 
+            $table->id(); 
             $table->timestamps();
             $table->string('name');
         });

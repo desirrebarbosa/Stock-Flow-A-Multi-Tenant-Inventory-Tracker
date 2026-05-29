@@ -19,7 +19,7 @@ class ProductFactory extends Factory
     {
         return [
             'company_id' => \App\Models\Company::factory(),
-            'sku'=> $this->faker->unique()->strtoupper($this->faker->bothify('????####')),
+            'sku' => $this->faker->unique()->regexify('[A-Z]{4}[0-9]{4}'),
             // use true to get space separated string
             'name' => $this->faker->words(2, true),
             'current_stock' => $this->faker->numberBetween(10, 100),
