@@ -14,7 +14,7 @@
     const logout = async() => {
         try {
             const response = await axios.post(
-            'http://127.0.0.1:9000/api/logout', 
+            `${import.meta.env.VITE_API_BASE_URL}/logout`, 
             null,
             {headers:
                 {Authorization: 'Bearer ' + localStorage.getItem('auth_token')}

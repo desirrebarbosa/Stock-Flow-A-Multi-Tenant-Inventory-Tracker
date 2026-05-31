@@ -17,12 +17,11 @@ const router = createRouter({
     routes: routes,
 });
 
-router.beforeEach((to, from, next) => {
-    if (to.path == '/dashboard' && !localStorage.getItem('token')) {
-        next('/login');
-    } else {
-        next();
-    }
+router.beforeEach((to, from) => {
+    if (to.meta.requiresAuth && !localStorage.getItem('auth_token')) {
+        return '/login';
+    } 
+    return true;
 });
 
 export default router;
