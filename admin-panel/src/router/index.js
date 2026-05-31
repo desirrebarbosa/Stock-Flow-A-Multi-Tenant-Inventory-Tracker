@@ -4,6 +4,7 @@ import DashboardView from '../views/DashboardView.vue';
 
 const routes = [
     { path: '/login', component: LoginView},
+    {path: '/', component: LoginView },
     { 
         path: '/dashboard', 
         component: DashboardView,
@@ -14,6 +15,14 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes: routes,
+});
+
+router.beforeEach((to, from, next) => {
+    if (to.path == '/dashboard' && !localStorage.getItem('token')) {
+        next('/login');
+    } else {
+        next();
+    }
 });
 
 export default router;
