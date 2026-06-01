@@ -1,6 +1,9 @@
 <template>
+    <h1>Log In</h1>
     <form @submit.prevent="login">
+        <label for="email">Email:</label>
         <input v-model="email" placeholder="Enter your email"/>
+        <label for="password">Password: </label>
         <input v-model="password" type="password" placeholder="Enter your password"/>
         <button type="submit">Login</button>
     </form>
